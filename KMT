@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+			function wheeldrawing() {
+				var $f =  $("<span>");
+				$f.addClass("frame");
+				$("body").append($f);
+				
+				var $doto =  $("<span>");
+				$doto.addClass("dot o");
+				$f.append($doto);
+
+				var $tri = new Array(12); 
+				var radius  = 100;
+				
+				for (i = 0; i < $tri.length; i++){
+					$tri[i] = $("<span>");
+					$tri[i].addClass("trianlge");
+					$tri[i].css('transform', 'rotate(' + (90 - i*30) + 'deg)');
+					$f.append($tri[i]);
+					$tri[i].css('left', (115 + radius * Math.cos(Math.PI*i/6)) + 'px');
+					$tri[i].css('top',  (100 - radius * Math.sin(Math.PI*i/6)) + 'px');	
+				}
+
+				var $dotl =  $("<span>");
+				$dotl.addClass("dot l");
+				$f.append($dotl);
+
+				var $doti =  $("<span>");
+				$doti.addClass("dot i");
+				$f.append($doti);	
+
+				$f.css('left', Math.random()*1000 + 'px');  
+				$f.css('top' , (Math.random()* 200 + 280) + 'px'); 
+			}
+		</script>
+		<style>
+			body {
+				background-color: rgb(201, 201, 201);
+				font-family: "Microsoft JhengHei";
+			}
+			.D {
+				position: absolute;
+				left: 40px;
+				top: 30px;
+				color: black;
+				font-size: 6cm;
+				font-weight: 500;
+				line-height: 1;
+				background-color: rgb(255, 255, 255);
+				border: solid rgb(0, 0, 0);
+				border-radius: 50px;
+				border-width: 15px;
+			}
+			hr {
+				position: relative;
+				top: 280px;
+				display: block;
+				height: 1px;
+				border: 0;
+				border-top: 8px solid rgb(0, 0, 0);
+				margin: 1em 0;
+				padding: 0;
+			}
+			.frame{
+				position: absolute;
+				left: 600px;
+				top: 560px;
+			}
+			.dot{
+				position: absolute;
+				border-radius: 50%;
+				display: inline-block;
+			}
+			.dot.o{
+				left: 0px;
+				top: 0px;
+				height: 260px;
+				width: 260px;
+				background-color: rgb(1, 43, 153);
+			}
+			.dot.l{
+				left: 57px;
+				top: 57px;
+				height: 146px;
+				width: 146px;
+				background-color: rgb(1, 43, 153);
+			}
+			.dot.i{
+				left: 65px;
+				top: 65px;
+				height: 130px;
+				width: 130px;
+				background-color: rgb(255, 255, 255);
+			}
+			.trianlge{
+				position: absolute;
+				left: 50px;
+				top: 35px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 15px 60px 15px;
+				border-color: transparent transparent #ffffff transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span id="di"  onclick="wheeldrawing();" class = "D">click me</span>
+			<hr>
+			<span id = "f" class="frame" >
+			</span>
+		</div>
+	</body>
+</html>
