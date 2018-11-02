@@ -42,7 +42,7 @@
 				font-family: "Microsoft JhengHei";
 			}
 			.D {
-				position: fixed;
+				position: absolute;
 				left: 40px;
 				top: 30px;
 				color: black;
@@ -106,14 +106,21 @@
 				border-width: 0 15px 60px 15px;
 				border-color: transparent transparent #ffffff transparent;
 			}
+			.spotify{
+				position: absolute;
+				left: 940px;
+				top: 30px;
+			}
 		</style>
 	</head>
 	<body>
 		<div>
 			<button id="di"  onclick="wheeldrawing();" class = "D">click me</button>
+			<iframe src="https://open.spotify.com/embed/album/4Sq6jhy0Ap7ylw89joqlfi" width="300" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media" class = "spotify"></iframe>
 			<hr>
 			<span id = "f" class="frame" >
 			</span>
 		</div>
+		
 	</body>
 </html>
